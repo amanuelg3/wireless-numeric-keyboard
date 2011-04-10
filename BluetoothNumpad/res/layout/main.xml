@@ -11,7 +11,7 @@
  			android:layout_width="fill_parent"
  			android:layout_height="fill_parent" android:layout_weight="0.2"> 
  			<Button android:layout_width="fill_parent" android:text=" Num " android:layout_weight="0.25" android:layout_height="match_parent" android:id="@+id/button_numlock"></Button>
-			<Button android:layout_width="fill_parent" android:text="  del   "   android:layout_weight="0.25" android:layout_height="match_parent" android:id="@+id/button_del"></Button>			
+			<Button android:layout_width="fill_parent" android:text=" Back "   android:layout_weight="0.25" android:layout_height="match_parent" android:id="@+id/button_backspace"></Button>			
 			<Button android:layout_width="fill_parent" android:text="    .    "   android:layout_weight="0.25" android:layout_height="match_parent" android:id="@+id/button_dot"></Button>
 			<Button android:layout_width="fill_parent" android:text="    *    "  android:layout_weight="0.25" android:layout_height="match_parent" android:id="@+id/button_mul"></Button>
 		</TableRow>

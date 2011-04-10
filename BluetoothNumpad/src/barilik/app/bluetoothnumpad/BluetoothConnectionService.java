@@ -72,9 +72,12 @@ public class BluetoothConnectionService {
     public static final int NUMMUL = 0x6A;
     public static final int NUMDIV = 0x6F;
     public static final int NUMNUM = 0x90;
-    public static final int NUMDEL = 0x7F;
+    public static final int NUMBACKSPACE = '\b';
     public static final int NUMENTER = '\n';
     public static final int NUMDOT = 0x2E;
+    
+    //main_2nd
+    public static final int NUMLEFT = 0x25;
     
     /**
      * konštruktor, parametre context a handler

@@ -26,9 +26,11 @@ public class KeyListeners {
 	private Button buttonMul;
 	private Button buttonDiv;
 	private Button buttonNum;
-	private Button buttonDel;
+	private Button buttonBackspace;
 	private Button buttonEnter;
 	private Button buttonDot;
+	//main_2nd
+	private Button buttonLeft;
 	
 	private BluetoothConnectionService mCommandService = null;
 	public static Boolean initialized = false;
@@ -51,118 +53,33 @@ public class KeyListeners {
 		buttonMul = (Button) activity.findViewById(R.id.button_mul);
 		buttonDiv = (Button) activity.findViewById(R.id.button_div);
 		buttonNum = (Button) activity.findViewById(R.id.button_numlock);
-		buttonDel = (Button) activity.findViewById(R.id.button_del);
+		buttonBackspace = (Button) activity.findViewById(R.id.button_backspace);
 		buttonEnter = (Button) activity.findViewById(R.id.button_enter);
 		buttonDot = (Button) activity.findViewById(R.id.button_dot);
 		
+		//main_2nd
+		buttonLeft = (Button) activity.findViewById(R.id.button_left);
+		
+		
 		//Vytvorenie Listenerev pre buttony
-		button0.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				mCommandService.write(BluetoothConnectionService.NUM00);
-			}
-		});
-		button1.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				mCommandService.write(BluetoothConnectionService.NUM01);
-			}
-		});
-		button2.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				mCommandService.write(BluetoothConnectionService.NUM02);
-			}
-		});
-		button3.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				mCommandService.write(BluetoothConnectionService.NUM03);
-			}
-		});
-		button4.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				mCommandService.write(BluetoothConnectionService.NUM04);
-			}
-		});
-		button5.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				mCommandService.write(BluetoothConnectionService.NUM05);
-			}
-		});
-		button6.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				mCommandService.write(BluetoothConnectionService.NUM06);
-			}
-		});
-		button7.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				mCommandService.write(BluetoothConnectionService.NUM07);
-			}
-		});
-		button8.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				mCommandService.write(BluetoothConnectionService.NUM08);
-			}
-		});
-		button9.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				mCommandService.write(BluetoothConnectionService.NUM09);
-			}
-		});
-		buttonPlus.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				mCommandService.write(BluetoothConnectionService.NUMPLUS);
-			}
-		});
-		buttonMinus.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				mCommandService.write(BluetoothConnectionService.NUMMINUS);
-			}
-		});
-		buttonMul.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				mCommandService.write(BluetoothConnectionService.NUMMUL);
-			}
-		});
-		buttonDiv.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				mCommandService.write(BluetoothConnectionService.NUMDIV);
-			}
-		});
-		buttonNum.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				mCommandService.write(BluetoothConnectionService.NUMNUM);
-			}
-		});
-		buttonDel.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				mCommandService.write(BluetoothConnectionService.NUMDEL);
-			}
-		});
-		buttonEnter.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				mCommandService.write(BluetoothConnectionService.NUMENTER);
-			}
-		});
-		buttonDot.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				mCommandService.write(BluetoothConnectionService.NUMDOT);
-			}
-		});
+		button0.setOnClickListener(new CustomListener(BluetoothConnectionService.NUM00, mCommandService));
+
+		button1.setOnClickListener(new CustomListener(BluetoothConnectionService.NUM01, mCommandService));
+		button2.setOnClickListener(new CustomListener(BluetoothConnectionService.NUM02, mCommandService));
+		button3.setOnClickListener(new CustomListener(BluetoothConnectionService.NUM03, mCommandService));
+		button4.setOnClickListener(new CustomListener(BluetoothConnectionService.NUM04, mCommandService));
+		button5.setOnClickListener(new CustomListener(BluetoothConnectionService.NUM05, mCommandService));
+		button6.setOnClickListener(new CustomListener(BluetoothConnectionService.NUM06, mCommandService));
+		button7.setOnClickListener(new CustomListener(BluetoothConnectionService.NUM07, mCommandService));
+		button8.setOnClickListener(new CustomListener(BluetoothConnectionService.NUM08, mCommandService));
+		button9.setOnClickListener(new CustomListener(BluetoothConnectionService.NUM09, mCommandService));
+		buttonPlus.setOnClickListener(new CustomListener(BluetoothConnectionService.NUMPLUS, mCommandService));
+		buttonMinus.setOnClickListener(new CustomListener(BluetoothConnectionService.NUMMINUS, mCommandService));
+		buttonMul.setOnClickListener(new CustomListener(BluetoothConnectionService.NUMMUL, mCommandService));
+		buttonDiv.setOnClickListener(new CustomListener(BluetoothConnectionService.NUMDIV, mCommandService));
+		buttonNum.setOnClickListener(new CustomListener(BluetoothConnectionService.NUMNUM, mCommandService));
+		buttonBackspace.setOnClickListener(new CustomListener(BluetoothConnectionService.NUMBACKSPACE, mCommandService));
+		buttonEnter.setOnClickListener(new CustomListener(BluetoothConnectionService.NUMENTER, mCommandService));
+		buttonDot.setOnClickListener(new CustomListener(BluetoothConnectionService.NUMDOT, mCommandService));		
 	}	
 }

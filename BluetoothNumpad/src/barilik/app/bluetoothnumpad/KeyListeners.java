@@ -57,10 +57,6 @@ public class KeyListeners {
 		buttonEnter = (Button) activity.findViewById(R.id.button_enter);
 		buttonDot = (Button) activity.findViewById(R.id.button_dot);
 		
-		//main_2nd
-		buttonLeft = (Button) activity.findViewById(R.id.button_left);
-		
-		
 		//Vytvorenie Listenerev pre buttony
 		button0.setOnClickListener(new CustomListener(BluetoothConnectionService.NUM00, mCommandService));
 

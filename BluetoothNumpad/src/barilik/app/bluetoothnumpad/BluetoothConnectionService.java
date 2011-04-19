@@ -22,8 +22,6 @@ public class BluetoothConnectionService {
     private ConnectThread mConnectThread;
     private ConnectedThread mConnectedThread;
     private int mState;
-//    private BluetoothDevice mSavedDevice;
-//    private int mConnectionLostCount;
     
     //Unik·tne UUID aplik·cie
     private static final UUID MY_UUID = UUID.fromString("04c6093b-0000-1000-8000-00805f9b34fb");
@@ -34,10 +32,10 @@ public class BluetoothConnectionService {
     public static final int STATE_CONNECTING = 2; // now initiating an outgoing connection
     public static final int STATE_CONNECTED = 3;  // now connected to a remote device
     
- /*   	
-  * 	java.awt.event kÛdy jednotliv˝ch kl·vesov
-  * 
-  * 	public static final int VK_0 = 0x30;
+    /*   	
+   		java.awt.event kÛdy jednotliv˝ch kl·vesov
+ 
+   		public static final int VK_0 = 0x30;
 		public static final int VK_1 = 0x31;
 		public static final int VK_2 = 0x32;
 		public static final int VK_3 = 0x33;
@@ -52,7 +50,8 @@ public class BluetoothConnectionService {
 		public static final int VK_ADD = 0x6B;
 		public static final int VK_DIVIDE = 0x6F;
 		public static final int VK_DELETE = 0x7F;
-		public static final int VK_ENTER = '\n';*/  
+		public static final int VK_ENTER = '\n';
+	*/  
    
     // Konötanty, ktorÈ bud˙ predstavovaù vstup pre BT server
     public static final int EXIT_CMD = 999;
@@ -75,9 +74,6 @@ public class BluetoothConnectionService {
     public static final int NUMBACKSPACE = '\b';
     public static final int NUMENTER = '\n';
     public static final int NUMDOT = 0x2E;
-    
-    //main_2nd
-    public static final int NUMLEFT = 0x25;
     
     /**
      * konötruktor, parametre context a handler
@@ -221,7 +217,7 @@ public class BluetoothConnectionService {
         // Send a failure message back to the Activity
         Message msg = mHandler.obtainMessage(RemoteBluetooth.MESSAGE_TOAST);
         Bundle bundle = new Bundle();
-        bundle.putString(RemoteBluetooth.TOAST, "Unable to connect device");
+        bundle.putString(RemoteBluetooth.TOAST, "Nepodarilo sa pripojiù k zariadeniu.");
         msg.setData(bundle);
         mHandler.sendMessage(msg);
     }
@@ -245,7 +241,7 @@ public class BluetoothConnectionService {
 	        // Send a failure message back to the Activity
 	        Message msg = mHandler.obtainMessage(RemoteBluetooth.MESSAGE_TOAST);
 	        Bundle bundle = new Bundle();
-	        bundle.putString(RemoteBluetooth.TOAST, "Device connection was lost");
+	        bundle.putString(RemoteBluetooth.TOAST, "Spojenie bolo preruöenÈ.");
 	        msg.setData(bundle);
 	        mHandler.sendMessage(msg);
 //        }
